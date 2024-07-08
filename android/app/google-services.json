@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "247996277330",
+    "project_id": "cinematix-dianprsty",
+    "storage_bucket": "cinematix-dianprsty.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:247996277330:android:a1089e7929bc08b3f4b58b",
+        "android_client_info": {
+          "package_name": "com.dianprasetyo.cinematix"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDN-Vb7XUzs7B66DidnJ8hgSuXtTBfndhg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

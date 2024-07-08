@@ -8,7 +8,7 @@
 PRODUCT_NAME = cinematix
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.example.cinematix
+PRODUCT_BUNDLE_IDENTIFIER = com.dianprasetyo.cinematix
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2024 com.example. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2024 com.dianprasetyo. All rights reserved.
