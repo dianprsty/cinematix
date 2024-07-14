@@ -6,5 +6,5 @@ abstract interface class TransactionRepository {
     required Transaction transaction,
   });
 
-  Future<Result<List<Transaction>>> getUserTransactions({required String id});
+  Future<Result<List<Transaction>>> getUserTransactions({required String uid});
 }
