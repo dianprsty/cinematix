@@ -2,10 +2,10 @@ import 'package:cinematix/data/repositories/authentication.dart';
 import 'package:cinematix/data/repositories/user_repository.dart';
 import 'package:cinematix/domain/entities/result.dart';
 import 'package:cinematix/domain/entities/user.dart';
-import 'package:cinematix/domain/usecases/register/register_param.dart';
-import 'package:cinematix/domain/usecases/usecase.dart';
+import 'package:cinematix/domain/UseCases/register/register_param.dart';
+import 'package:cinematix/domain/UseCases/UseCase.dart';
 
-class Register implements Usecase<Result<User>, RegisterParam> {
+class Register implements UseCase<Result<User>, RegisterParam> {
   final Authentication _authentication;
   final UserRepository _userRepository;
 

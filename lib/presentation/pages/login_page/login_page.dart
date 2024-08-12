@@ -1,8 +1,8 @@
 import 'package:cinematix/data/firebase/firebase_authentication.dart';
 import 'package:cinematix/data/firebase/firebase_user_repository.dart';
-import 'package:cinematix/domain/usecases/login/login.dart';
+import 'package:cinematix/domain/UseCases/login/login.dart';
 import 'package:cinematix/presentation/pages/main_page/main_page.dart';
-import 'package:cinematix/presentation/providers/usecases/login_provider.dart';
+import 'package:cinematix/presentation/providers/UseCases/login_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

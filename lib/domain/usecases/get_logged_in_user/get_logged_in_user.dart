@@ -2,9 +2,9 @@ import 'package:cinematix/data/repositories/authentication.dart';
 import 'package:cinematix/data/repositories/user_repository.dart';
 import 'package:cinematix/domain/entities/result.dart';
 import 'package:cinematix/domain/entities/user.dart';
-import 'package:cinematix/domain/usecases/usecase.dart';
+import 'package:cinematix/domain/UseCases/UseCase.dart';
 
-class GetLoggedInUser implements Usecase<Result<User>, void> {
+class GetLoggedInUser implements UseCase<Result<User>, void> {
   final Authentication _authentication;
   final UserRepository _userRepository;
 
