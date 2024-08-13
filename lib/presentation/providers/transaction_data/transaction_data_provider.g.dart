@@ -1,25 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'get_logged_in_user_provider.dart';
+part of 'transaction_data_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$getLoggedInUserHash() => r'7ba60dca0503f580a2bd5e40770d9bce3fe9cc82';
+String _$transactionDataHash() => r'7565a6a888184b373305806e967c02b2b912ef6c';
 
-/// See also [getLoggedInUser].
-@ProviderFor(getLoggedInUser)
-final getLoggedInUserProvider = Provider<GetLoggedInUser>.internal(
-  getLoggedInUser,
-  name: r'getLoggedInUserProvider',
+/// See also [TransactionData].
+@ProviderFor(TransactionData)
+final transactionDataProvider =
+    AsyncNotifierProvider<TransactionData, List<Transaction>>.internal(
+  TransactionData.new,
+  name: r'transactionDataProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$getLoggedInUserHash,
+      : _$transactionDataHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef GetLoggedInUserRef = ProviderRef<GetLoggedInUser>;
+typedef _$TransactionData = AsyncNotifier<List<Transaction>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
