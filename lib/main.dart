@@ -1,8 +1,10 @@
 import 'package:cinematix/firebase_options.dart';
+import 'package:cinematix/presentation/misc/constant.dart';
 import 'package:cinematix/presentation/providers/router/router_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,6 +24,19 @@ class CinematixApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp.router(
         title: 'Cinematix',
+        theme: ThemeData.from(
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: saffron,
+            surface: backgroundColor,
+            brightness: Brightness.dark,
+          ),
+          useMaterial3: true,
+          textTheme: TextTheme(
+            bodyMedium: GoogleFonts.poppins(color: ghostWhite),
+            bodyLarge: GoogleFonts.poppins(color: ghostWhite),
+            labelLarge: GoogleFonts.poppins(color: ghostWhite),
+          ),
+        ),
         debugShowCheckedModeBanner: false,
         routeInformationParser:
             ref.watch(routerProvider).routeInformationParser,

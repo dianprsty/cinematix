@@ -1,3 +1,4 @@
+import 'package:cinematix/presentation/extensions/build_context_extension.dart';
 import 'package:cinematix/presentation/providers/router/router_provider.dart';
 import 'package:cinematix/presentation/providers/user_data/user_data_provider.dart';
 import 'package:flutter/material.dart';
@@ -14,10 +15,7 @@ class LoginPage extends ConsumerWidget {
           ref.read(routerProvider).goNamed('main');
         }
       } else if (next is AsyncError) {
-        print('error ${next.error}');
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text(next.error.toString()),
-        ));
+        context.showSnackBar(next.error.toString());
       }
     });
     return Scaffold(
