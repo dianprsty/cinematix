@@ -30,7 +30,7 @@ part 'user_data_provider.g.dart';
 class UserData extends _$UserData {
   @override
   Future<User?> build() async {
-    GetLoggedInUser getLoggedInUser = ref.watch(getLoggedInUserProvider);
+    GetLoggedInUser getLoggedInUser = ref.read(getLoggedInUserProvider);
     var userResult = await getLoggedInUser(null);
 
     switch (userResult) {
@@ -42,7 +42,7 @@ class UserData extends _$UserData {
     }
   }
 
-  Future<void> login(String email, String password) async {
+  Future<void> login({required String email, required String password}) async {
     state = const AsyncLoading();
 
     Login login = ref.read(loginProvider);

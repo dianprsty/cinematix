@@ -1,8 +1,5 @@
-import 'package:cinematix/data/firebase/firebase_authentication.dart';
-import 'package:cinematix/data/firebase/firebase_user_repository.dart';
-import 'package:cinematix/domain/UseCases/login/login.dart';
-import 'package:cinematix/presentation/pages/main_page/main_page.dart';
-import 'package:cinematix/presentation/providers/UseCases/login_provider.dart';
+import 'package:cinematix/presentation/providers/router/router_provider.dart';
+import 'package:cinematix/presentation/providers/user_data/user_data_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -11,29 +8,26 @@ class LoginPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    ref.listen(userDataProvider, (previous, next) {
+      if (next is AsyncData) {
+        if (next.value != null) {
+          ref.read(routerProvider).goNamed('main');
+        }
+      } else if (next is AsyncError) {
+        print('error ${next.error}');
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(next.error.toString()),
+        ));
+      }
+    });
     return Scaffold(
       appBar: AppBar(title: const Text("Login")),
       body: Center(
         child: ElevatedButton(
             onPressed: () {
-              Login login = ref.watch(loginProvider);
-
-              login(LoginParams(email: "dian@mail.co", password: "123456"))
-                  .then((result) {
-                if (result.isSuccess) {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => MainPage(user: result.resultValue!),
-                    ),
-                  );
-                } else {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(result.errorMessage!),
-                    ),
-                  );
-                }
-              });
+              ref
+                  .read(userDataProvider.notifier)
+                  .login(email: 'dian@mail.co', password: '123456');
             },
             child: const Text("Login")),
       ),

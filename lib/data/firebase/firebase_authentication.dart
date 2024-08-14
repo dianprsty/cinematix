@@ -19,10 +19,11 @@ class FirebaseAuthentication implements Authentication {
         email: email,
         password: password,
       );
+      print('login: ${userCredential.user?.uid}');
 
       return Result.success(userCredential.user!.uid);
     } on firebase_auth.FirebaseAuthException catch (e) {
-      return Result.failed(e.message!);
+      return Result.failed(e.message ?? 'Failed to sign in');
     }
   }
 

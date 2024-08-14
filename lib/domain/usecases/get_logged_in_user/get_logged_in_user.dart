@@ -25,7 +25,7 @@ class GetLoggedInUser implements UseCase<Result<User>, void> {
     var user = await _userRepository.getUser(uid: loggedId);
 
     if (user.isSuccess) {
-      Result.success(user);
+      return Result.success(user.resultValue!);
     }
     return Result.failed(user.errorMessage!);
   }

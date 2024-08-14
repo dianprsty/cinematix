@@ -1,4 +1,3 @@
-import 'package:cinematix/data/repositories/transaction_repository.dart';
 import 'package:cinematix/data/repositories/user_repository.dart';
 import 'package:cinematix/domain/entities/result.dart';
 import 'package:cinematix/domain/usecases/get_user_balance/get_user_balance_param.dart';
