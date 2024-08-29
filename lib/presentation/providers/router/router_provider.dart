@@ -1,5 +1,6 @@
 import 'package:cinematix/presentation/pages/login_page/login_page.dart';
 import 'package:cinematix/presentation/pages/main_page/main_page.dart';
+import 'package:cinematix/presentation/pages/register_page/register_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -13,7 +14,13 @@ Raw<GoRouter> router(RouterRef ref) => GoRouter(routes: [
         builder: (context, state) => const MainPage(),
       ),
       GoRoute(
-          path: '/login',
-          name: 'login',
-          builder: (context, state) => const LoginPage()),
+        path: '/login',
+        name: 'login',
+        builder: (context, state) => const LoginPage(),
+      ),
+      GoRoute(
+        path: '/register',
+        name: 'register',
+        builder: (context, state) => const RegisterPage(),
+      ),
     ], initialLocation: '/login', debugLogDiagnostics: false);

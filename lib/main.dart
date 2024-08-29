@@ -23,7 +23,7 @@ class CinematixApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp.router(
-        title: 'Cinematix',
+        title: 'cinematix',
         theme: ThemeData.from(
           colorScheme: ColorScheme.fromSeed(
             seedColor: saffron,
@@ -36,6 +36,8 @@ class CinematixApp extends ConsumerWidget {
             bodyLarge: GoogleFonts.poppins(color: ghostWhite),
             labelLarge: GoogleFonts.poppins(color: ghostWhite),
           ),
+        ).copyWith(
+          scaffoldBackgroundColor: backgroundColor,
         ),
         debugShowCheckedModeBanner: false,
         routeInformationParser:
