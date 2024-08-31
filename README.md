@@ -1,16 +1,14 @@
 # cinematix
 
-A new Flutter project.
+A movie ticket booking app that allows users to register, log in, view now-playing and upcoming movies, access detailed movie information, and book tickets for movie shows. Integrated TMDB (The Movie Database) API as the remote data source and used Firebase for authentication and user data storage.
 
-## Getting Started
+Tech Stack: Dart, Flutter, Riverpod, Firebase.
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| Feature  | Screenshoot                                         |
+| -------- | --------------------------------------------------- |
+| Home     | <img src="Screenshot_1725090018.png"  height="700"> |
+| Profile  | <img src="Screenshot_1725090025.png"  height="700"> |
+| Login    | <img src="Screenshot_1725090031.png"  height="700"> |
+| Register | <img src="Screenshot_1725090035.png"  height="700"> |
