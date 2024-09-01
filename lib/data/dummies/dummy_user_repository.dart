@@ -11,9 +11,11 @@ class DummyUserRepository implements UserRepository {
       required String email,
       required String name,
       String? photoUrl,
-      int balance = 0}) {
-    // TODO: implement createUser
-    throw UnimplementedError();
+      int balance = 0}) async {
+    await Future.delayed(const Duration(seconds: 1));
+    return Result.success(
+      User(uid: uid, email: "dummy@dummy.com", name: "Dummy Dummy"),
+    );
   }
 
   @override
@@ -21,32 +23,45 @@ class DummyUserRepository implements UserRepository {
     await Future.delayed(const Duration(seconds: 1));
 
     return Result.success(
-        User(uid: uid, email: "dummy@dummy.com", name: "Dummy Dummy"));
+      User(uid: uid, email: "dummy@dummy.com", name: "Dummy Dummy"),
+    );
   }
 
   @override
-  Future<Result<int>> getUserBalance({required String uid}) {
-    // TODO: implement getUserBalance
-    throw UnimplementedError();
+  Future<Result<int>> getUserBalance({required String uid}) async {
+    await Future.delayed(const Duration(seconds: 1));
+
+    return const Result.success(0);
   }
 
   @override
-  Future<Result<User>> updateUser({required User user}) {
-    // TODO: implement updateUser
-    throw UnimplementedError();
+  Future<Result<User>> updateUser({required User user}) async {
+    await Future.delayed(const Duration(seconds: 1));
+    return Result.success(
+      User(uid: user.uid, email: "updated@dummy.com", name: "Updated Dummy"),
+    );
   }
 
   @override
   Future<Result<User>> updateUserBalance(
-      {required String uid, required int balance}) {
-    // TODO: implement updateUserBalance
-    throw UnimplementedError();
+      {required String uid, required int balance}) async {
+    await Future.delayed(const Duration(seconds: 1));
+    return Result.success(
+      User(
+          uid: uid,
+          email: "dummy@dummy.com",
+          name: "Dummy Dummy",
+          balance: balance),
+    );
   }
 
   @override
   Future<Result<User>> uploadProfilePicture(
-      {required User user, required File imageFile}) {
-    // TODO: implement uploadProfilePicture
-    throw UnimplementedError();
+      {required User user, required File imageFile}) async {
+    await Future.delayed(const Duration(seconds: 1));
+
+    return Result.success(
+      User(uid: user.uid, email: "dummy@dummy.com", name: "Dummy Dummy"),
+    );
   }
 }

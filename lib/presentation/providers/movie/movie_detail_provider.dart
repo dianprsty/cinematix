@@ -11,7 +11,7 @@ part 'movie_detail_provider.g.dart';
 @riverpod
 Future<MovieDetail?> movieDetail(MovieDetailRef ref,
     {required Movie movie}) async {
-  GetMovieDetail getMovieDetail = ref.read(getMovieDetailProvider);
+  GetMovieDetail getMovieDetail = ref.watch(getMovieDetailProvider);
 
   var result = await getMovieDetail(GetMovieDetailParam(movie: movie));
   return switch (result) {

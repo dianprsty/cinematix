@@ -43,7 +43,7 @@ class NetworkImageCard extends StatelessWidget {
                       fit: boxFit ?? BoxFit.cover,
                     ),
                   ),
-                )
+                ),
             ],
           ),
         ));

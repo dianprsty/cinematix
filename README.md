@@ -12,3 +12,4 @@ Tech Stack: Dart, Flutter, Riverpod, Firebase.
 | Profile  | <img src="Screenshot_1725090025.png"  height="700"> |
 | Login    | <img src="Screenshot_1725090031.png"  height="700"> |
 | Register | <img src="Screenshot_1725090035.png"  height="700"> |
+| Detail   | <img src="Screenshot_1725171607.png"  height="700"> |

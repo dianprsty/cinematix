@@ -40,9 +40,8 @@ class TmdbMovieRepository implements MovieRepository {
         options: _options,
       );
 
-      //   final result = List<Map<String, dynamic>>.from(response.data["results"]);
-
-      return Result.success(MovieDetail.fromJSON(response.data['results']));
+      MovieDetail movieDetail = MovieDetail.fromJSON(response.data);
+      return Result.success(movieDetail);
     } on DioException catch (e) {
       return Result.failed("${e.message}");
     }
