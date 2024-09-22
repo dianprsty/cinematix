@@ -63,7 +63,14 @@ class DetailPage extends ConsumerWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 40, horizontal: 24),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    MovieDetail? movieDetail = asyncMovieDetail.valueOrNull;
+                    if (movieDetail != null) {
+                      ref
+                          .read(routerProvider)
+                          .pushNamed('time-booking', extra: movieDetail);
+                    }
+                  },
                   style: ElevatedButton.styleFrom(
                     foregroundColor: backgroundColor,
                     backgroundColor: saffron,
