@@ -58,7 +58,7 @@ class FirebaseUserRepository implements UserRepository {
   Future<Result<int>> getUserBalance({required String uid}) async {
     try {
       DocumentReference<Map<String, dynamic>> documentReference =
-          _firebaseFirestore.doc('user/$uid');
+          _firebaseFirestore.doc('users/$uid');
 
       DocumentSnapshot<Map<String, dynamic>> result =
           await documentReference.get();
@@ -75,7 +75,7 @@ class FirebaseUserRepository implements UserRepository {
   Future<Result<User>> updateUser({required User user}) async {
     try {
       DocumentReference<Map<String, dynamic>> documentReference =
-          _firebaseFirestore.doc('user/${user.uid}');
+          _firebaseFirestore.doc('users/${user.uid}');
 
       await documentReference.update(user.toJson());
 
@@ -99,7 +99,7 @@ class FirebaseUserRepository implements UserRepository {
   Future<Result<User>> updateUserBalance(
       {required String uid, required int balance}) async {
     DocumentReference<Map<String, dynamic>> documentReference =
-        _firebaseFirestore.doc('user/$uid');
+        _firebaseFirestore.doc('users/$uid');
 
     DocumentSnapshot<Map<String, dynamic>> result =
         await documentReference.get();
@@ -107,6 +107,8 @@ class FirebaseUserRepository implements UserRepository {
     if (!result.exists) {
       return const Result.failed("User not found");
     }
+
+    await documentReference.update({'balance': balance});
 
     DocumentSnapshot<Map<String, dynamic>> updatedResult =
         await documentReference.get();

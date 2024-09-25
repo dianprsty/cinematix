@@ -1,6 +1,7 @@
 import 'package:cinematix/domain/entities/movie.dart';
 import 'package:cinematix/domain/entities/movie_detail.dart';
 import 'package:cinematix/domain/entities/transaction.dart';
+import 'package:cinematix/presentation/pages/booking_confirmation_page/booking_confirmation_page.dart';
 import 'package:cinematix/presentation/pages/detail_page/detail_page.dart';
 import 'package:cinematix/presentation/pages/login_page/login_page.dart';
 import 'package:cinematix/presentation/pages/main_page/main_page.dart';
@@ -45,6 +46,13 @@ Raw<GoRouter> router(RouterRef ref) => GoRouter(routes: [
         path: '/seat-booking',
         name: 'seat-booking',
         builder: (context, state) => SeatBookingPage(
+          transactionDetail: state.extra as (MovieDetail, Transaction),
+        ),
+      ),
+      GoRoute(
+        path: '/booking-confirmation',
+        name: 'booking-confirmation',
+        builder: (context, state) => BookingConfirmationPage(
           transactionDetail: state.extra as (MovieDetail, Transaction),
         ),
       ),

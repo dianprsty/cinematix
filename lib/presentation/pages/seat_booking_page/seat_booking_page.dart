@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:cinematix/domain/entities/movie_detail.dart';
 import 'package:cinematix/domain/entities/transaction.dart';
+import 'package:cinematix/presentation/extensions/build_context_extension.dart';
 import 'package:cinematix/presentation/misc/constant.dart';
 import 'package:cinematix/presentation/misc/method.dart';
 import 'package:cinematix/presentation/pages/seat_booking_page/methods/legend.dart';
@@ -86,7 +87,23 @@ class _SeatBookingPageState extends ConsumerState<SeatBookingPage> {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      if (selectedSeat.isEmpty) {
+                        context.showSnackBar('Please select seat');
+                      } else {
+                        var updatedTransaction = transaction.copyWith(
+                          seats: (selectedSeat..sort())
+                              .map((e) => e.toString())
+                              .toList(),
+                          ticketAmount: selectedSeat.length,
+                          ticketPrice: 25000,
+                        );
+                        ref.read(routerProvider).pushNamed(
+                          'booking-confirmation',
+                          extra: (moviedetail, updatedTransaction),
+                        );
+                      }
+                    },
                     style: ElevatedButton.styleFrom(
                         foregroundColor: backgroundColor,
                         backgroundColor: saffron,
