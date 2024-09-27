@@ -138,6 +138,7 @@ class BookingConfirmationPage extends ConsumerWidget {
                                   .refreshUserData();
                               ref.read(routerProvider).goNamed('main');
                             case Failed(message: final message):
+                              // ignore: use_build_context_synchronously
                               context.showSnackBar(message);
                           }
                         });
