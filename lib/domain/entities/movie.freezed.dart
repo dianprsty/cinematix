@@ -20,7 +20,9 @@ mixin _$Movie {
   String get title => throw _privateConstructorUsedError;
   String? get posterPath => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Movie
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MovieCopyWith<Movie> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -42,6 +44,8 @@ class _$MovieCopyWithImpl<$Res, $Val extends Movie>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Movie
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -84,6 +88,8 @@ class __$$MovieImplCopyWithImpl<$Res>
       _$MovieImpl _value, $Res Function(_$MovieImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Movie
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -139,7 +145,9 @@ class _$MovieImpl implements _Movie {
   @override
   int get hashCode => Object.hash(runtimeType, id, title, posterPath);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Movie
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MovieImplCopyWith<_$MovieImpl> get copyWith =>
@@ -158,8 +166,11 @@ abstract class _Movie implements Movie {
   String get title;
   @override
   String? get posterPath;
+
+  /// Create a copy of Movie
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MovieImplCopyWith<_$MovieImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

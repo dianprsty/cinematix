@@ -19,7 +19,9 @@ mixin _$Actor {
   String get name => throw _privateConstructorUsedError;
   String? get profilePath => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Actor
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ActorCopyWith<Actor> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -41,6 +43,8 @@ class _$ActorCopyWithImpl<$Res, $Val extends Actor>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Actor
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -78,6 +82,8 @@ class __$$ActorImplCopyWithImpl<$Res>
       _$ActorImpl _value, $Res Function(_$ActorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Actor
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -125,7 +131,9 @@ class _$ActorImpl implements _Actor {
   @override
   int get hashCode => Object.hash(runtimeType, name, profilePath);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Actor
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ActorImplCopyWith<_$ActorImpl> get copyWith =>
@@ -140,8 +148,11 @@ abstract class _Actor implements Actor {
   String get name;
   @override
   String? get profilePath;
+
+  /// Create a copy of Actor
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ActorImplCopyWith<_$ActorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

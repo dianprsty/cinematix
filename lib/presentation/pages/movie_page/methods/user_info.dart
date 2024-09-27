@@ -1,5 +1,6 @@
 import 'package:cinematix/presentation/extensions/int_extension.dart';
 import 'package:cinematix/presentation/misc/method.dart';
+import 'package:cinematix/presentation/providers/router/router_provider.dart';
 import 'package:cinematix/presentation/providers/user_data/user_data_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -44,7 +45,7 @@ Widget userInfo(WidgetRef ref) => Padding(
               verticalSpace(5),
               GestureDetector(
                 onTap: () {
-                  // Go to wallet
+                  ref.read(routerProvider).pushNamed('wallet');
                 },
                 child: Row(
                   children: [

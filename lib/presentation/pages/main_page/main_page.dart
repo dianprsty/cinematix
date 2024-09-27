@@ -1,6 +1,7 @@
 import 'package:cinematix/presentation/extensions/build_context_extension.dart';
 import 'package:cinematix/presentation/pages/movie_page/movie_page.dart';
 import 'package:cinematix/presentation/pages/profile_page/profile_page.dart';
+import 'package:cinematix/presentation/pages/ticket_page/ticket_page.dart';
 import 'package:cinematix/presentation/providers/router/router_provider.dart';
 import 'package:cinematix/presentation/providers/user_data/user_data_provider.dart';
 import 'package:cinematix/presentation/widgets/bottom_nav_bar.dart';
@@ -40,7 +41,7 @@ class _MainPageState extends ConsumerState<MainPage> {
             },
             children: const [
               Center(child: MoviePage()),
-              Center(child: Text('Ticket Page')),
+              Center(child: TicketPage()),
               Center(child: ProfilePage()),
             ],
           ),

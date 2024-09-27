@@ -25,7 +25,9 @@ mixin _$MovieDetail {
   double get voteAverage => throw _privateConstructorUsedError;
   List<String> get genres => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MovieDetail
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MovieDetailCopyWith<MovieDetail> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -57,6 +59,8 @@ class _$MovieDetailCopyWithImpl<$Res, $Val extends MovieDetail>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MovieDetail
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -133,6 +137,8 @@ class __$$MovieDetailImplCopyWithImpl<$Res>
       _$MovieDetailImpl _value, $Res Function(_$MovieDetailImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MovieDetail
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -254,7 +260,9 @@ class _$MovieDetailImpl implements _MovieDetail {
       voteAverage,
       const DeepCollectionEquality().hash(_genres));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MovieDetail
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MovieDetailImplCopyWith<_$MovieDetailImpl> get copyWith =>
@@ -288,8 +296,11 @@ abstract class _MovieDetail implements MovieDetail {
   double get voteAverage;
   @override
   List<String> get genres;
+
+  /// Create a copy of MovieDetail
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MovieDetailImplCopyWith<_$MovieDetailImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
