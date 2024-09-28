@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cinematix/presentation/extensions/build_context_extension.dart';
 import 'package:cinematix/presentation/misc/method.dart';
 import 'package:cinematix/presentation/providers/router/router_provider.dart';
@@ -5,6 +7,7 @@ import 'package:cinematix/presentation/providers/user_data/user_data_provider.da
 import 'package:cinematix/presentation/widgets/cinematix_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:image_picker/image_picker.dart';
 
 class RegisterPage extends ConsumerStatefulWidget {
   const RegisterPage({super.key});
@@ -20,6 +23,8 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
   final TextEditingController retypePasswordController =
       TextEditingController();
 
+  XFile? xfile;
+
   @override
   void dispose() {
     nameController.dispose();
@@ -33,7 +38,9 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
   Widget build(BuildContext context) {
     ref.listen(userDataProvider, (previous, next) {
       if (next is AsyncData && next.value != null) {
-        ref.read(routerProvider).goNamed('main');
+        ref
+            .read(routerProvider)
+            .goNamed('main', extra: xfile != null ? File(xfile!.path) : null);
       } else if (next is AsyncError) {
         context.showSnackBar(next.error.toString());
       }
@@ -51,12 +58,23 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
                 ),
               ),
               verticalSpace(50),
-              const CircleAvatar(
-                radius: 50,
-                child: Icon(
-                  Icons.add_a_photo,
-                  color: Colors.white,
-                  size: 50,
+              GestureDetector(
+                onTap: () async {
+                  xfile = await ImagePicker()
+                      .pickImage(source: ImageSource.gallery);
+                  setState(() {});
+                },
+                child: CircleAvatar(
+                  radius: 50,
+                  backgroundImage:
+                      xfile != null ? FileImage(File(xfile!.path)) : null,
+                  child: xfile != null
+                      ? null
+                      : const Icon(
+                          Icons.add_a_photo,
+                          color: Colors.white,
+                          size: 50,
+                        ),
                 ),
               ),
               verticalSpace(24),

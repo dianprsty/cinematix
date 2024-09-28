@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cinematix/domain/entities/movie.dart';
 import 'package:cinematix/domain/entities/movie_detail.dart';
 import 'package:cinematix/domain/entities/transaction.dart';
@@ -19,7 +21,8 @@ Raw<GoRouter> router(RouterRef ref) => GoRouter(routes: [
       GoRoute(
         path: "/main",
         name: "main",
-        builder: (context, state) => const MainPage(),
+        builder: (context, state) => MainPage(
+            imageFile: state.extra != null ? state.extra as File : null),
       ),
       GoRoute(
         path: '/login',
