@@ -11,9 +11,11 @@ List<Widget> recentTransactions(WidgetRef ref) => [
       ),
       verticalSpace(24),
       ...ref.watch(transactionDataProvider).when(
-            data: (transactions) => (transactions
-                  ..sort((a, b) =>
-                      -a.transactionTime!.compareTo(b.transactionTime!)))
+            data: (transactions) => (transactions.isNotEmpty
+                    ? (transactions
+                      ..sort((a, b) =>
+                          -a.transactionTime!.compareTo(b.transactionTime!)))
+                    : transactions)
                 .map(
                     (transaction) => TransactionCard(transaction: transaction)),
             error: (error, stackTrace) => [],
